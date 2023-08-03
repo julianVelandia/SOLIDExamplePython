@@ -6,26 +6,33 @@ TIME_TIRE_PROCESS = 1
 TIME_INTERIOR_PROCESS = 4
 
 
-def production_line():
+def production_line_with_principle():
     print("Se inicia la línea de ensamblaje")
     for current_car in range(NUMBER_CARS_TO_PRODUCE):
         print("Se inicia le ensamblaje del carro: {}".format(str(current_car + 1)))
-        print("Inicia proceso de pintura de la carrocería, Carro: {}".format(str(current_car + 1)))
-        time.sleep(TIME_PAINT_PROCESS)
-        print("Finaliza proceso de pintura de la carrocería, Carro: {}".format(str(current_car + 1)))
-        print("Inicia proceso de ensamble de los neumáticos, Carro: {}".format(str(current_car + 1)))
-        for current_tire in range(4):
-            print("\t Ensamble del neumático {}, del Carro: {}".format(str(current_tire + 1), str(current_car + 1)))
-            time.sleep(TIME_TIRE_PROCESS)
-        print("Finaliza proceso de ensamble de los neumáticos, Carro: {}".format(str(current_car + 1)))
-
-        print("Inicia proceso de ensamble del interior, Carro: {}".format(str(current_car + 1)))
-        time.sleep(TIME_INTERIOR_PROCESS)
-        print("Finaliza proceso de ensamble del interior, Carro: {}".format(str(current_car + 1)))
+        paint_process(current_car)
+        tire_process(current_car)
+        interior_process(current_car)
         print("Se finaliza le ensamblaje del carro: {}".format(str(current_car + 1)))
+    print("Se finaliza la línea de ensamblaje")
 
+def paint_process(current_car: int):
+    print("Inicia proceso de pintura de la carrocería, Carro: {}".format(str(current_car + 1)))
+    time.sleep(TIME_PAINT_PROCESS)
+    print("Finaliza proceso de pintura de la carrocería, Carro: {}".format(str(current_car + 1)))
 
+def tire_process(current_car: int):
+    print("Inicia proceso de ensamble de los neumáticos, Carro: {}".format(str(current_car + 1)))
+    for current_tire in range(4):
+        print("\t Ensamble del neumático {}, del Carro: {}".format(str(current_tire + 1), str(current_car + 1)))
+        time.sleep(TIME_TIRE_PROCESS)
+    print("Finaliza proceso de ensamble de los neumáticos, Carro: {}".format(str(current_car + 1)))
+
+def interior_process(current_car: int):
+    print("Inicia proceso de ensamble del interior, Carro: {}".format(str(current_car + 1)))
+    time.sleep(TIME_INTERIOR_PROCESS)
+    print("Finaliza proceso de ensamble del interior, Carro: {}".format(str(current_car + 1)))
 
 
 if __name__ == "__main__":
-    production_line()
+    production_line_with_principle()

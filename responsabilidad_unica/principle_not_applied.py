@@ -23,6 +23,7 @@ def production_line_without_principle():
         time.sleep(TIME_INTERIOR_PROCESS)
         print("Finaliza proceso de ensamble del interior, Carro: {}".format(str(current_car + 1)))
         print("Se finaliza le ensamblaje del carro: {}".format(str(current_car + 1)))
+    print("Se finaliza la línea de ensamblaje")
 
 
 if __name__ == "__main__":
