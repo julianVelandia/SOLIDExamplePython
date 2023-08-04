@@ -35,13 +35,13 @@ def make_menu_without_principle_applied():
 
     print("Menú")
     print("1. HamburgerComboCocaCola:")
-    print("Consta de:", hamburger_combo_coca_cola.hamburger_type)
+    print("Consta de:", hamburger_combo_coca_cola.get_description())
 
     print("2. HamburgerComboQuatro:")
-    print("Consta de:", hamburger_combo_quatro.hamburger_type)
+    print("Consta de:", hamburger_combo_quatro.get_description())
 
     print("3. HamburgerComboLimonada:")
-    print("Consta de:", hamburger_combo_limonada.hamburger_type)
+    print("Consta de:", hamburger_combo_limonada.get_description())
 
 
 if __name__ == "__main__":
